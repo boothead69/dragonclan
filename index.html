@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0c0a09">
+<title>Dragon ClaN · Ak'Kan · Path of the Emperor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0a09;--bg2:#14110f;--line:#2a2420;--text:#e8e0d4;--muted:#9a8f82;
+  --gold:#c9a15a;--gold2:#e6c27a;--blood:#8a1c1c;
+  --serif:"Cinzel",Georgia,"Times New Roman",serif;--sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.65 var(--sans)}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* nav */
+header{position:sticky;top:0;z-index:20;background:rgba(12,10,9,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font:900 20px var(--serif);letter-spacing:.08em;color:var(--gold2);white-space:nowrap}
+nav{display:flex;gap:26px;overflow-x:auto}
+nav a{font-size:14px;color:var(--muted);white-space:nowrap;transition:color .2s}
+nav a:hover{color:var(--text)}
+.btn{display:inline-block;padding:12px 28px;font:700 14px var(--serif);letter-spacing:.1em;color:#1a1208;background:linear-gradient(180deg,var(--gold2),var(--gold));border:1px solid #6b4f1f;border-radius:2px;transition:filter .2s,transform .2s}
+.btn:hover{filter:brightness(1.1)}
+.btn.ghost{background:transparent;color:var(--gold2);border-color:var(--gold)}
+.btn.sm{padding:8px 18px;font-size:12px}
+
+/* hero */
+.hero{position:relative;min-height:88vh;display:grid;place-items:center;text-align:center;padding:96px 0;
+  background:radial-gradient(ellipse at 50% 0%,rgba(138,28,28,.35),transparent 60%),radial-gradient(ellipse at 50% 100%,rgba(201,161,90,.12),transparent 55%),var(--bg);border-bottom:1px solid var(--line)}
+.hero h1{margin:0 0 20px;font:900 clamp(40px,8vw,88px)/1.05 var(--serif);letter-spacing:.04em;color:var(--text);text-shadow:0 4px 40px rgba(0,0,0,.8)}
+.hero p{max-width:560px;margin:0 auto 36px;font-size:18px;color:var(--muted)}
+.hero .actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.crest{width:72px;height:72px;margin:0 auto 28px;border:1px solid var(--gold);transform:rotate(45deg);display:grid;place-items:center}
+.crest span{transform:rotate(-45deg);font:900 26px var(--serif);color:var(--gold2)}
+.hero .anim{animation:rise 1s ease-out both}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+/* sections */
+section{padding:88px 0;border-bottom:1px solid var(--line)}
+h2{margin:0 0 14px;font:700 clamp(26px,4vw,38px)/1.2 var(--serif);letter-spacing:.05em;color:var(--gold2);text-align:center}
+.lead{max-width:640px;margin:0 auto 48px;text-align:center;color:var(--muted)}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{padding:28px;background:var(--bg2);border:1px solid var(--line);border-top:2px solid var(--gold)}
+.card h3{margin:0 0 8px;font:700 18px var(--serif);letter-spacing:.04em}
+.card p{margin:0;color:var(--muted);font-size:15px}
+
+/* media */
+.media{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.shot{aspect-ratio:16/10;display:flex;align-items:flex-end;padding:14px;border:1px solid var(--line);font:500 13px var(--serif);letter-spacing:.06em;color:var(--muted);
+  background:linear-gradient(160deg,#1c1612,#0c0a09 70%)}
+.shot:nth-child(3n){background:linear-gradient(160deg,#2a1210,#0c0a09 70%)}
+.shot:nth-child(3n+1){background:linear-gradient(160deg,#1a1710,#0c0a09 70%)}
+
+/* members */
+.table{max-width:760px;margin:0 auto;border:1px solid var(--line)}
+.row{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:12px;padding:14px 20px;border-bottom:1px solid var(--line);font-size:15px}
+.row:last-child{border-bottom:0}
+.row.head{background:var(--bg2);font:700 13px var(--serif);letter-spacing:.08em;color:var(--gold)}
+.row span:not(:first-child){color:var(--muted)}
+
+/* cta */
+.cta{text-align:center;background:radial-gradient(ellipse at 50% 100%,rgba(138,28,28,.3),transparent 60%),var(--bg)}
+.cta h2{font-size:clamp(28px,5vw,48px)}
+
+footer{padding:36px 0;text-align:center;font-size:13px;color:var(--muted)}
+footer a{margin:0 10px;color:var(--muted)}footer a:hover{color:var(--text)}
+
+@media(max-width:640px){
+  nav{display:none}
+  .row{grid-template-columns:1.3fr 1fr;}
+  .row span:nth-child(3){display:none}
+}
+@media(prefers-reduced-motion:reduce){.hero .anim{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">DRAGON CLAN</a>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#guerra">Guerra</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#membros">Membros</a>
+      <a href="#recrutamento">Recrutamento</a>
+    </nav>
+    <a class="btn sm" href="#recrutamento">Entrar</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap anim">
+      <div class="crest"><span>D</span></div>
+      <h1>Dragon ClaN</h1>
+      <p>Guild Ak'Kan de Path of the Emperor. Merkhadia não pede licença: fama se ganha em campo aberto, na Statue War e na Guild War.</p>
+      <div class="actions">
+        <a class="btn" href="#recrutamento">Quero entrar</a>
+        <a class="btn ghost" href="https://discord.gg/SEU-CONVITE">Discord</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="sobre">
+    <div class="wrap">
+      <h2>Sobre a guild</h2>
+      <p class="lead">Ninguém recebe um império. A Dragon ClaN reúne jogadores Ak'Kan que escolheram um nome, uma guerra e um posto para manter. Aqui cada membro tem função e cada guerra tem plano.</p>
+      <div class="grid">
+        <div class="card"><h3>Nação</h3><p>Ak'Kan, de Merkhadia. Lutamos contra os Humanos de Kartefant pelo mesmo território.</p></div>
+        <div class="card"><h3>Foco</h3><p>PvP em campo aberto, Statue War, Guild War e caça a chefes. [ajuste conforme a prioridade real]</p></div>
+        <div class="card"><h3>Comunidade</h3><p>Organização e avisos no Discord. [idioma e horários de jogo]</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="guerra">
+    <div class="wrap">
+      <h2>Campo de batalha</h2>
+      <p class="lead">Classe, equipamento e tempo decidem quem segura a linha. Cada segundo conta.</p>
+      <div class="grid">
+        <div class="card"><h3>Statue War</h3><p>Dias, horários e função de cada grupo.</p></div>
+        <div class="card"><h3>Guild War</h3><p>Aliados, rivais e histórico de conquistas.</p></div>
+        <div class="card"><h3>Chefes</h3><p>Rotina de caça, de Brute a Diablo.</p></div>
+        <div class="card"><h3>Ranking</h3><p>Posição atual da guild na ladder de fama.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="agenda">
+    <div class="wrap">
+      <h2>Agenda da guerra</h2>
+      <p class="lead">Quando a guild se reúne. Presença nesses eventos pesa na avaliação dos membros.</p>
+      <div class="table">
+        <div class="row head"><span>Evento</span><span>Quando</span><span>Quem</span></div>
+        <div class="row"><span>Statue War</span><span>[dia e hora]</span><span>Todos</span></div>
+        <div class="row"><span>Guild War</span><span>[dia e hora]</span><span>Todos</span></div>
+        <div class="row"><span>Caça a chefes</span><span>[dia e hora]</span><span>Grupo de chefes</span></div>
+        <div class="row"><span>Treino em campo</span><span>[dia e hora]</span><span>Novatos</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria">
+    <div class="wrap">
+      <h2>Galeria</h2>
+      <p class="lead">Substitua os blocos abaixo por prints próprios da guild.</p>
+      <div class="media">
+        <div class="shot">Statue War</div><div class="shot">Chefe derrotado</div><div class="shot">Reunião da guild</div>
+        <div class="shot">Fortaleza</div><div class="shot">Campo aberto</div><div class="shot">Ranking</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="membros">
+    <div class="wrap">
+      <h2>Membros</h2>
+      <p class="lead">Lista da liderança e dos principais membros.</p>
+      <div class="table">
+        <div class="row head"><span>Nome</span><span>Classe</span><span>Cargo</span></div>
+        <div class="row"><span>Líder</span><span>Classe</span><span>Mestre</span></div>
+        <div class="row"><span>Sub-líder</span><span>Classe</span><span>Oficial</span></div>
+        <div class="row"><span>Membro</span><span>Classe</span><span>Membro</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="recrutamento" class="cta">
+    <div class="wrap">
+      <h2>Escreva seu nome na guerra</h2>
+      <p class="lead">Recrutamos jogadores Ak'Kan. Entre no Discord, apresente seu personagem (nome, classe e nível) e informe seus horários.</p>
+      <div class="grid" style="max-width:760px;margin:0 auto 36px;text-align:left">
+        <div class="card"><h3>Requisitos</h3><p>Nível mínimo: [definir]. Personagem Ak'Kan.</p></div>
+        <div class="card"><h3>Presença</h3><p>Participação nas guerras e comunicação no Discord.</p></div>
+        <div class="card"><h3>Processo</h3><p>Apresentação no Discord e período de teste com um oficial.</p></div>
+      </div>
+      <a class="btn" href="https://discord.gg/SEU-CONVITE">Entrar no Discord</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="https://playpote.com">PlayPOTE</a><a href="https://discord.gg/SEU-CONVITE">Discord</a><a href="#top">Topo</a>
+    <p>Dragon ClaN · Página de fãs, sem vínculo oficial com Path of the Emperor.</p>
+  </div>
+</footer>
+</body>
+</html>
